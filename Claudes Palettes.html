@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude's: Carolyn Warrender Color Palettes - Itten Color Star System</title>
+    <style>
+        :root {
+            --bg: #0f0f12;
+            --card: #14161a;
+            --ink: #eef1f4;
+            --muted: #9aa3ad;
+            --border: #252a31;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: var(--bg);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--ink);
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 50px;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        .intro {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            line-height: 1.8;
+            color: var(--muted);
+            border: 1px solid var(--border);
+        }
+
+        .palette-section {
+            background: var(--card);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+        }
+
+        .palette-title {
+            font-size: 2em;
+            color: var(--ink);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .palette-intro {
+            color: var(--muted);
+            margin-bottom: 25px;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .temperature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .temp-section {
+            border-radius: 10px;
+            padding: 20px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+
+        .temp-label {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--ink);
+        }
+
+        .warm-label {
+            color: var(--ink);
+        }
+
+        .cool-label {
+            color: var(--ink);
+        }
+
+        .color-group {
+            margin-bottom: 20px;
+        }
+
+        .group-title {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: var(--muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .color-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .color-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .color-swatch {
+            height: 70px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .color-label {
+            font-size: 0.75em;
+            color: var(--muted);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .tertiary-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: var(--card);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            color: var(--muted);
+            line-height: 1.8;
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .temperature-grid {
+                grid-template-columns: 1fr;
+            }
+            .tertiary-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claude's Carolyn Warrender Color Palettes</h1>
+        <p class="subtitle">Based on Johannes Itten's Color Star System</p>
+
+        <div class="intro">
+            <p>Carolyn Warrender's "Living with Color" system uses Johannes Itten's color theory with <strong>12 colors in each palette</strong>: 3 primary, 3 secondary (made by mixing two primaries), and 6 tertiary colors (made by mixing two secondaries). Each of the six elemental palettes plus Naturals is divided into warm (yellow/orange undertones) and cool (blue undertones) variations, giving you 12 harmonious colors to work with in each temperature.</p>
+        </div>
+
+        <!-- AIR PALETTE -->
+        <div class="palette-section">
+            <div class="palette-title">Air</div>
+            <p class="palette-intro">Delicate, whispery pastels and soft tints creating light, ethereal spaces</p>
+            
+            <div class="temperature-grid">
+                <div class="temp-section">
+                    <div class="temp-label warm-label">WARM Air - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffd4d4;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffe8b3;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d4e4ff;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffd4b8;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e8f4c8;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e8d4f0;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffe0c4;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #fff0d0;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #dcf0d8;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #dce4f8;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0d8e8;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffd8d0;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp-section">
+                    <div class="temp-label cool-label">COOL Air - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffd0e0;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #fffad4;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d4e9ff;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffe4d4;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e0f8d8;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e0d4ff;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffecd4;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f4fcd8;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d8f4e8;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d8e0ff;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ecd4f0;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ffd4e0;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WIND PALETTE -->
+        <div class="palette-section">
+            <div class="palette-title">Wind</div>
+            <p class="palette-intro">Fresh, clear colors with crisp clarity suggesting open skies and breezy days</p>
+            
+            <div class="temperature-grid">
+                <div class="temp-section">
+                    <div class="temp-label warm-label">WARM Wind - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0c0b0;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f8e8a0;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #b8d8d0;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f4d4a8;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d8e4b8;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d4c8d8;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f6dcb0;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e8e8b8;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c8e0c8;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c4d0d8;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #dcc8d0;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0ccb8;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp-section">
+                    <div class="temp-label cool-label">COOL Wind - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e0b8c0;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f8f4c8;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c0d8e8;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ecd8c8;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d8e8d0;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d0c8dc;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0e0c8;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e8f0d0;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d0e4dc;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c8d4e0;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d8c4d4;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e4c8c8;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WATER PALETTE -->
+        <div class="palette-section">
+            <div class="palette-title">Water</div>
+            <p class="palette-intro">Aquatic blues and blue-greens that evoke tranquility and depth</p>
+            
+            <div class="temperature-grid">
+                <div class="temp-section">
+                    <div class="temp-label warm-label">WARM Water - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c87878;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d8c878;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #4fa8b0;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d0a078;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #88b898;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #8a8098;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d4b478;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #b0c488;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #68b0a0;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #6898a8;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a08098;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c88878;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp-section">
+                    <div class="temp-label cool-label">COOL Water - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #b06878;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c8c888;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #4a8cb0;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #bc9880;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #78a898;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #7a7098;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c4b088;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a0b890;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #609aa0;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #5880a0;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #906888;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #b07878;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIRE PALETTE -->
+        <div class="palette-section">
+            <div class="palette-title">Fire</div>
+            <p class="palette-intro">Bold jewel tones and vibrant hues that make dramatic statements</p>
+            
+            <div class="temperature-grid">
+                <div class="temp-section">
+                    <div class="temp-label warm-label">WARM Fire - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d94452;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0b840;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #3d85a8;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e67e49;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #78a058;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #8a5880;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ed9b44;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #b4ac4c;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #589480;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #5d6d94;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a14e68;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #df614d;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp-section">
+                    <div class="temp-label cool-label">COOL Fire - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c41e3a;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e0b848;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #2d6ba8;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d26b41;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #689248;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #784571;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #d98e44;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a4a248;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #487c78;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #4d5888;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #913056;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #cb453d;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EARTH PALETTE -->
+        <div class="palette-section">
+            <div class="palette-title">Earth</div>
+            <p class="palette-intro">Rich browns and organic tones inspired by soil, wood, and natural materials</p>
+            
+            <div class="temperature-grid">
+                <div class="temp-section">
+                    <div class="temp-label warm-label">WARM Earth - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a85842;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #c09848;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #5a7870;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #b47845;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #8d8b5c;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #7f6859;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ba8846;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a69252;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #738466;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #6a7364;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #94584d;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ae6844;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp-section">
+                    <div class="temp-label cool-label">COOL Earth - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #98584a;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a89058;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #507078;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a07451;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #7c8068;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #746461;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a48254;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #908860;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #667870;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #60686c;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #845855;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #9c664d;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MINERAL PALETTE -->
+        <div class="palette-section">
+            <div class="palette-title">Mineral</div>
+            <p class="palette-intro">Cool grays and stone colors bringing architectural strength and modern elegance</p>
+            
+            <div class="temperature-grid">
+                <div class="temp-section">
+                    <div class="temp-label warm-label">WARM Mineral - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a88880;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #b0a888;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #808898;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ac9884;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #989890;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #94888c;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #aea086;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a4a08c;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #8c9494;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #8a8892;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #9e8886;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #aa9082;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp-section">
+                    <div class="temp-label cool-label">COOL Mineral - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #98888c;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #a0a898;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #788898;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #9c9892;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #8c9898;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #888892;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #9ea095;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #96a098;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #829098;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #808895;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #90888f;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #98908f;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NATURALS PALETTE -->
+        <div class="palette-section">
+            <div class="palette-title">Naturals</div>
+            <p class="palette-intro">Timeless neutrals from pure white to deep charcoal that complement all other palettes</p>
+            
+            <div class="temperature-grid">
+                <div class="temp-section">
+                    <div class="temp-label warm-label">WARM Naturals - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0e8e0;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f8f0d8;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e0e8e8;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f4ecdc;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e8f0e0;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e8e0e4;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f6f0da;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0f0dc;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e4ece4;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e4e4e6;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ece4e4;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0e8de;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp-section">
+                    <div class="temp-label cool-label">COOL Naturals - 12 Colors</div>
+                    
+                    <div class="color-group">
+                        <div class="group-title">Primary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0e8ec;"></div>
+                                <div class="color-label">Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f8f8f0;"></div>
+                                <div class="color-label">Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #e8f0f8;"></div>
+                                <div class="color-label">Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Secondary Colors (3)</div>
+                        <div class="color-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f4f0ee;"></div>
+                                <div class="color-label">Orange (R+Y)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f0f4f4;"></div>
+                                <div class="color-label">Green (Y+B)</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ece8f2;"></div>
+                                <div class="color-label">Purple (R+B)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <div class="group-title">Tertiary Colors (6)</div>
+                        <div class="tertiary-row">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f6f4ef;"></div>
+                                <div class="color-label">Orange-Yellow</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f4f6f2;"></div>
+                                <div class="color-label">Yellow-Green</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #ecf2f6;"></div>
+                                <div class="color-label">Green-Blue</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #eaecf5;"></div>
+                                <div class="color-label">Blue-Purple</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #efe8f0;"></div>
+                                <div class="color-label">Purple-Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background: #f2eaed;"></div>
+                                <div class="color-label">Red-Orange</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>About the Itten Color System:</strong> Johannes Itten's color theory forms the foundation of Carolyn Warrender's palettes. Each palette contains 3 primary colors (red, yellow, blue), 3 secondary colors (created by mixing two primaries: orange from red+yellow, green from yellow+blue, purple from red+blue), and 6 tertiary colors (created by mixing adjacent secondaries). The warm and cool variations shift the undertones while maintaining this 12-color structure, creating harmonious color schemes for every decorating style.</p>
+        </div>
+    </div>
+</body>
+</html>

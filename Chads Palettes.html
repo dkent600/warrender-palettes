@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Chad's: Warrender / Itten-style Palettes – Warm & Cool (HEX)</title>
+<style>
+  :root{ --bg:#0f0f12; --card:#14161a; --ink:#eef1f4; --muted:#9aa3ad; --border:#252a31; }
+  *{box-sizing:border-box}
+  body{ margin:0; padding:32px; background:var(--bg); color:var(--ink); font:14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; }
+  h1{font-size:22px; margin:0 0 16px}
+  p.lead{color:var(--muted); margin:0 0 24px}
+  /* one row per palette */
+  .grid{ display:grid; gap:24px; grid-template-columns:1fr; }
+  .row{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; box-shadow:0 6px 18px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.02); }
+  .rowhead{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .colhead{ font-size:22px; font-weight:700; text-align:center; margin:0 0 8px }
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .col{ padding:8px; }
+  .group{ margin-top:8px; }
+  .gtitle{ font-weight:800; letter-spacing:.5px; color:#c3cbd6; margin:8px 4px }
+  .swatchGrid.large{ display:grid; gap:12px; grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .swatchGrid.small{ display:grid; gap:12px; grid-template-columns: repeat(6, minmax(0,1fr)); }
+  .swatch{ background:#1a1d22; border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:10px; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .chip.lg{ width:100%; height:92px; border-radius:8px; border:1px solid rgba(0,0,0,.35); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 6px 14px rgba(0,0,0,.25); }
+  .chip.sm{ width:100%; height:64px; border-radius:8px; border:1px solid rgba(0,0,0,.35); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 6px 14px rgba(0,0,0,.25); }
+  .label{ font-size:13px; color:#cfe0db }
+  .note{ font-size:12px; color:var(--muted) }
+</style>
+</head>
+<body>
+  <h1>Chad's Carolyn Warrender–style Palettes mapped to Itten’s 12-color star</h1>
+  <p class="lead">Each row shows <b>Warm</b> (left) and <b>Cool</b> (right) for that palette. Inside each column: <b>Primary (3)</b>, <b>Secondary (3)</b>, and <b>Tertiary (6)</b> groups in Itten order.</p>
+
+  <div id="wrap" class="grid"></div>
+
+<script>
+const ittenPrimary = ["Red","Yellow","Blue"]; 
+const ittenSecondary = ["Orange (R+Y)","Green (Y+B)","Violet (R+B)"];
+const ittenTertiary = ["Orange–Yellow","Yellow–Green","Green–Blue","Blue–Violet","Violet–Red","Red–Orange"];
+
+// 12-color sets per theme & temperature, in Itten order
+const PALETTES = {
+  "Air": { warm: ["#F7C6C4","#FFF3B0","#CDE3FB","#FFD2A6","#D6EBCF","#EED3F3","#FFC2A8","#FFE29C","#DDECBF","#CDEFE6","#D9D3F6","#F8C0D6"],
+            cool:  ["#F3C8CE","#FFF5C2","#C6E1FF","#FFD7B8","#CFE9DA","#E1D6F5","#FFC8BE","#FFE9B3","#D2F0D4","#C6F0EE","#D0DAF9","#F3C2E6"] },
+  "Wind": { warm: ["#D98A86","#E8D27A","#7FA9D8","#E3A56E","#8FB592","#B497C6","#E49A7F","#E6C077","#9FBE8E","#7FBDB5","#9FA2D0","#C88CAB"],
+            cool:  ["#C9858D","#E6D89A","#75A3D6","#DEB18A","#88BFA0","#A8A0C9","#D99A8F","#E2C89A","#97C7A1","#74C1BE","#95A9D4","#BE93BA"] },
+  "Water": { warm: ["#C86A6E","#E7C65A","#3FA0E6","#E2964C","#3FAF7A","#7E7AC6","#D77758","#E4B04D","#66BB6A","#2FAFA0","#6A79C9","#B95E8F"],
+            cool:  ["#B35C6A","#E0CC6A","#2F7FD1","#D28B4A","#2F9E6D","#6A6EBB","#C46A57","#D9A24B","#5AAE6A","#1C9A96","#586EC4","#A3558A"] },
+  "Fire":  { warm: ["#D7263D","#F5C400","#2E60FF","#F57C00","#2EAA3B","#7E3FF2","#E54B17","#F5A300","#8DC63F","#1FA6A0","#4B49E8","#C0338A"],
+            cool:  ["#C41E3A","#E6B800","#2A56E0","#E06E00","#29953A","#6C37D6","#D04416","#E19600","#7BB53A","#199592","#3F42CC","#A82C7E"] },
+  "Earth": { warm: ["#9F4A3C","#C7A24A","#486C94","#C66A2B","#6F8A56","#7A5C86","#B85C3A","#C6903A","#7D9753","#4F8A7A","#5F5C8C","#8E4C6E"],
+            cool:  ["#8D4347","#BCA45A","#486088","#B7643A","#667F63","#6E5A86","#A55644","#B88F4A","#728C63","#4A7E7C","#565A84","#7C5172"] },
+  "Mineral":{ warm: ["#7B4C49","#B8A36C","#586C88","#A06A4A","#7A876A","#756A86","#8F5A4C","#A98F62","#85916A","#6C8884","#6E688A","#845C74"],
+            cool:  ["#6A4F55","#A9A37A","#556A86","#8F6C56","#708776","#676A86","#7E5C58","#9A9272","#7A8F78","#5E8688","#616A88","#78627E"] }
+};
+
+const wrap = document.getElementById('wrap');
+for (const theme of Object.keys(PALETTES)) {
+  const row = document.createElement('section');
+  row.className = 'row';
+  const head = document.createElement('div'); head.className = 'rowhead';
+  head.innerHTML = `<h2 class="colhead">WARM ${theme} - 12 Colors</h2><h2 class="colhead">COOL ${theme} - 12 Colors</h2>`;
+  row.appendChild(head);
+  const cols = document.createElement('div'); cols.className = 'cols';
+  cols.appendChild(buildColumn(PALETTES[theme].warm));
+  cols.appendChild(buildColumn(PALETTES[theme].cool));
+  row.appendChild(cols);
+  wrap.appendChild(row);
+}
+
+function buildColumn(hexes){
+  const col = document.createElement('div'); col.className = 'col';
+  col.appendChild(makeGroup('PRIMARY COLORS (3)', hexes.slice(0,3), ittenPrimary, true));
+  col.appendChild(makeGroup('SECONDARY COLORS (3)', hexes.slice(3,6), ittenSecondary, true));
+  col.appendChild(makeGroup('TERTIARY COLORS (6)', hexes.slice(6), ittenTertiary, false));
+  return col;
+}
+
+function makeGroup(title, list, labels, large){
+  const g = document.createElement('div'); g.className = 'group';
+  const h = document.createElement('div'); h.className = 'gtitle'; h.textContent = title; g.appendChild(h);
+  const grid = document.createElement('div'); grid.className = 'swatchGrid ' + (large? 'large':'small');
+  list.forEach((hex, i)=> grid.appendChild(makeSwatch(hex, labels[i]||'', large)));
+  g.appendChild(grid); return g;
+}
+
+function makeSwatch(hex, label, large){
+  const sw = document.createElement('div'); sw.className = 'swatch';
+  const chip = document.createElement('div'); chip.className = 'chip ' + (large? 'lg':'sm'); chip.style.background = hex;
+  const {r,g,b} = hexToRgb(hex); const luma = 0.2126*r + 0.7152*g + 0.0722*b;
+  chip.style.outline = luma < 128 ? '1px solid rgba(255,255,255,.35)' : '1px solid rgba(0,0,0,.25)';
+  const text = document.createElement('div'); text.className = 'label'; text.textContent = label;
+  const code = document.createElement('div'); code.className = 'note'; code.textContent = hex;
+  sw.appendChild(chip); sw.appendChild(text); sw.appendChild(code); return sw;
+}
+
+function hexToRgb(hex){ const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex); return m ? { r: parseInt(m[1],16), g: parseInt(m[2],16), b: parseInt(m[3],16) } : {r:0,g:0,b:0}; }
+</script>
+</body>
+</html>
