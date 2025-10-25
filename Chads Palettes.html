@@ -26,6 +26,22 @@
   .chip.sm{ width:100%; height:64px; border-radius:8px; border:1px solid rgba(0,0,0,.35); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 6px 14px rgba(0,0,0,.25); }
   .label{ font-size:13px; color:#cfe0db }
   .note{ font-size:12px; color:var(--muted) }
+  .copy-btn {
+    background: var(--border);
+    color: var(--muted);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background 0.2s;
+    width: 100%;
+  }
+  .copy-btn:hover {
+      background: #3a404a;
+      color: var(--ink);
+  }
 </style>
 </head>
 <body>
@@ -88,14 +104,29 @@ function makeGroup(title, list, labels, large){
 function makeSwatch(hex, label, large){
   const sw = document.createElement('div'); sw.className = 'swatch';
   const chip = document.createElement('div'); chip.className = 'chip ' + (large? 'lg':'sm'); chip.style.background = hex;
+  chip.onclick = () => copyToClipboard(hex, sw.querySelector('.copy-btn'));
   const {r,g,b} = hexToRgb(hex); const luma = 0.2126*r + 0.7152*g + 0.0722*b;
   chip.style.outline = luma < 128 ? '1px solid rgba(255,255,255,.35)' : '1px solid rgba(0,0,0,.25)';
   const text = document.createElement('div'); text.className = 'label'; text.textContent = label;
   const code = document.createElement('div'); code.className = 'note'; code.textContent = hex;
-  sw.appendChild(chip); sw.appendChild(text); sw.appendChild(code); return sw;
+  const btn = document.createElement('button'); btn.className = 'copy-btn'; btn.textContent = 'Copy';
+  btn.onclick = () => copyToClipboard(hex, btn);
+  sw.appendChild(chip); sw.appendChild(text); sw.appendChild(code); sw.appendChild(btn); return sw;
 }
 
 function hexToRgb(hex){ const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex); return m ? { r: parseInt(m[1],16), g: parseInt(m[2],16), b: parseInt(m[3],16) } : {r:0,g:0,b:0}; }
+
+function copyToClipboard(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+            btn.textContent = originalText;
+        }, 1500);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
 </script>
 </body>
 </html>
