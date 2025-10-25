@@ -162,6 +162,23 @@
         .hex-code {
             opacity: 0.7;
         }
+
+        .copy-btn {
+            background: var(--border);
+            color: var(--muted);
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 0.7em;
+            cursor: pointer;
+            margin-top: 5px;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #3a404a;
+            color: var(--ink);
+        }
         
         .tertiary-row {
             display: grid;
@@ -255,10 +272,11 @@
     function buildColorItem(hex, label) {
         return `
             <div class="color-item">
-                <div class="color-swatch" style="background: ${hex};"></div>
+                <div class="color-swatch" style="background: ${hex};" onclick="copyToClipboard('${hex}', this.nextElementSibling.querySelector('.copy-btn'))"></div>
                 <div class="color-label">
                     ${label}<br>
                     <span class="hex-code">${hex}</span>
+                    <button class="copy-btn" onclick="copyToClipboard('${hex}', this)">Copy</button>
                 </div>
             </div>
         `;
@@ -315,6 +333,17 @@
     }
     intro.insertAdjacentHTML('afterend', allPalettesHTML);
 
+    function copyToClipboard(text, btn) {
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = btn.textContent;
+            btn.textContent = 'Copied!';
+            setTimeout(() => {
+                btn.textContent = originalText;
+            }, 1500);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
     </script>
 </body>
 </html>
