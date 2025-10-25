@@ -113,6 +113,14 @@
         .copy-all-btn:hover {
             background: var(--button-hover-bg);
         }
+
+        .palette-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--ink);
+            width: 120px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -123,23 +131,19 @@
 
     <script>
         const PALETTES = [
-            ["#6B5B95", "#88B04B", "#F7CAC9", "#92A8D1", "#955251"],
-            ["#B565A7", "#009B77", "#DD4124", "#D65076", "#45B8AC"],
-            ["#EFC050", "#5B5EA6", "#9B2335", "#DFCFBE", "#55B4B0"],
-            ["#FF6F61", "#6B5B95", "#88B04B", "#F7CAC9", "#92A8D1"],
-            ["#009B77", "#DD4124", "#D65076", "#45B8AC", "#EFC050"]
+            { name: "Serene", colors: ["#6B5B95", "#88B04B", "#F7CAC9", "#92A8D1", "#955251"] },
         ];
 
         const container = document.getElementById('palettes-container');
 
-        PALETTES.forEach(palette => {
+        PALETTES.forEach(paletteData => {
             const paletteRow = document.createElement('div');
             paletteRow.className = 'palette-row';
 
             const colorsContainer = document.createElement('div');
             colorsContainer.className = 'colors-container';
 
-            palette.forEach(hex => {
+            paletteData.colors.forEach(hex => {
                 const colorItem = document.createElement('div');
                 colorItem.className = 'color-item';
 
@@ -169,8 +173,13 @@
             const copyAllBtn = document.createElement('button');
             copyAllBtn.className = 'copy-all-btn';
             copyAllBtn.textContent = 'Copy Palette';
-            copyAllBtn.onclick = () => copyToClipboard(palette.join(', '), copyAllBtn, 'Copied Palette');
+            copyAllBtn.onclick = () => copyToClipboard(paletteData.colors.join(', '), copyAllBtn, 'Copied Palette');
 
+            const paletteName = document.createElement('div');
+            paletteName.className = 'palette-name';
+            paletteName.textContent = paletteData.name;
+
+            paletteRow.appendChild(paletteName);
             paletteRow.appendChild(colorsContainer);
             paletteRow.appendChild(copyAllBtn);
             container.appendChild(paletteRow);
