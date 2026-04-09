@@ -73,9 +73,6 @@
   @media (max-width: 1100px) { #sdj-wrap .sdj-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 700px)  { #sdj-wrap .sdj-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 460px)  { #sdj-wrap .sdj-grid { grid-template-columns: 1fr; } }
-  @media print {
-    #sdj-wrap .sdj-footer { display: block; }
-  }
 
   #sdj-wrap .sdj-col { display: flex; flex-direction: column; gap: 12px; }
 
@@ -174,11 +171,15 @@
   #sdj-wrap .sdj-event em { display: block; font-size: 0.65rem; opacity: 0.52; margin-top: 1px; font-style: italic; }
 
   #sdj-wrap .sdj-footer {
-    display: none;
     text-align: center; padding: 30px 0 0;
     font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: #EDD286; opacity: 0.2;
+    display: none;
   }
+  @media print {
+    #sdj-wrap .sdj-footer { display: block; }
+  }
+
 </style>
 
 <div class="sdj-header">
