@@ -126,7 +126,7 @@
   }
 
   #sdj-wrap .sdj-narrative {
-    display: flex; flex-direction: column; gap: 5px;
+    display: flex; flex-direction: column; gap: 8px;
     padding-top: 8px; border-top: 1px solid #ccc;
   }
   #sdj-wrap .sdj-narrative p {
@@ -134,23 +134,24 @@
     color: #333; font-style: italic;
   }
 
-  #sdj-wrap .sdj-meta-row { display: flex; flex-direction: column; gap: 5px; }
-  #sdj-wrap .sdj-meta { display: flex; align-items: flex-start; gap: 5px; }
+  #sdj-wrap .sdj-meta-row { display: flex; flex-direction: column; gap: 8px; }
+  #sdj-wrap .sdj-meta { display: grid; grid-template-columns: 62px 1fr; align-items: start; gap: 8px; }
   #sdj-wrap .sdj-meta-label {
     font-family: Arial, sans-serif;
     font-size: 0.45rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase;
     color: #666;
-    min-width: 48px; padding-top: 1px; flex-shrink: 0;
+    line-height: 1.4;
   }
-  #sdj-wrap .sdj-meta-val           { font-size: 0.65rem; font-style: italic; color: #111; line-height: 1.3; }
-  #sdj-wrap .sdj-meta-val.rhythm    { font-style: normal; font-weight: 700; font-size: 0.68rem; }
-  #sdj-wrap .sdj-meta-val.element   { font-style: normal; font-weight: 600; }
+  #sdj-wrap .sdj-meta-val           { font-size: 0.65rem; font-style: italic; color: #111; line-height: 1.4; margin-top: -0.23em; }
+  #sdj-wrap .sdj-meta-val.rhythm    { font-style: normal; font-weight: 400; font-size: 0.65rem; opacity: 0.85; }
+  #sdj-wrap .sdj-meta-val.element   { font-style: normal; font-weight: 400; }
   #sdj-wrap .sdj-meta-val.archetype { }
   #sdj-wrap .sdj-meta-val.chakra    { font-style: normal; font-size: 0.62rem; color: #444; }
   #sdj-wrap .sdj-meta-val.planet    { font-style: normal; }
   #sdj-wrap .sdj-meta-val.goddess   { font-style: normal; font-weight: 700; font-size: 0.72rem; }
 
+  #sdj-wrap .sdj-theme strong { opacity: 1; font-size: 0.6rem; display: block; margin-bottom: 4px; }
   #sdj-wrap .sdj-theme {
     font-size: 0.6rem; line-height: 1.5; color: #444;
     margin-top: 7px; font-style: italic;
@@ -185,7 +186,7 @@
     font-family: Arial, sans-serif;
     font-size: 0.48rem; font-weight: 700;
     color: #555;
-    min-width: 32px; padding-top: 1px; flex-shrink: 0;
+    min-width: 32px; flex-shrink: 0;
   }
   #sdj-wrap .sdj-event { font-size: 0.62rem; line-height: 1.45; color: #111; }
   #sdj-wrap .sdj-event strong { font-weight: 700; }
@@ -238,176 +239,86 @@
     margin-left: .7em;
   }
 </style>
-
 <div class="sdj-header">
-  <div class="sdj-ornament">April 19 – 24 · Machu Campo</div>
-  <h2 class="sdj-title">Sisters Daily Journey</h2>
-  <div class="sdj-subtitle">Theatre · Ceremony · Dance · Song · Nature · Yoga · Community</div>
+<div class="sdj-ornament">April 19 – 24 · Machu Campo</div>
+<h2 class="sdj-title">Sisters Daily Journey</h2>
+<div class="sdj-subtitle">Theatre · Ceremony · Dance · Song · Nature · Yoga · Community</div>
 </div>
 <div class="sdj-banner"><span class="raise-glyph left">༄</span>An immersive arc of descent, transformation &amp; reintegration<span class="raise-glyph right">༄</span></div>
 <div class="sdj-note">Note this schedule is subject to change</div>
 <div class="sdj-divider"></div>
-
 <div class="sdj-grid">
-
-  <!-- SUNDAY -->
-  <div class="sdj-col">
-    <div class="sdj-card">
-      <div class="sdj-date">April 19</div>
-      <div class="sdj-dayname">Sunday</div>
-      <div class="sdj-narrative">
-        <p>Sisters arrive. Settle in.</p>
-        <p>Wash away our worries and stories — rest, feel safe. Be here, be present. Be intentional and slow.</p>
-      </div>
-    </div>
-    <div class="sdj-schedule">
-      <div class="sdj-sched-head">Daily Schedule</div>
-      <div class="sdj-block">
-        <div class="sdj-time">6:00</div>
-        <div class="sdj-event"><strong>Check-in &amp; Intros</strong><em>Learn about &amp; explore the retreat land · Machu Campo &amp; La Huerta</em></div>
-      </div>
-      <div class="sdj-block">
-        <div class="sdj-time">17:30</div>
-        <div class="sdj-event"><strong>Ecstatic Dance &amp; Dinner</strong><em>ESM · TBD</em></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MONDAY -->
-  <div class="sdj-col">
-    <div class="sdj-card">
-      <div class="sdj-date">April 20</div>
-      <div class="sdj-dayname">Monday</div>
-      <div class="sdj-meta-row">
-        <div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Flow</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Water + Earth</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">Inner Mother</span></div>
-      </div>
-      <div class="sdj-theme">Introductions — to Machu Campo, to each other, to the River. Calming from the external world, directing awareness inward. Introducing conscious awareness.</div>
-    </div>
-    <div class="sdj-schedule">
-      <div class="sdj-sched-head">Daily Schedule</div>
-      <div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga &amp; Meditation</strong><em>Ali · La Huerta</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong><em>Brad · Introduction to Machu Campo</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing &amp; Transition Circle</strong><em>Stone house / by the river</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar Making</strong><em>Gratitude, intention, surrender &amp; receive</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>River Ceremony</strong><em>Recognizing &amp; honoring the river spirit · Rosa</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">12:00</div><div class="sdj-event"><strong>Lunch</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>Free Time</strong><em>Nidra Yoga (optional) · Massage &amp; Treatments</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">15:00</div><div class="sdj-event"><strong>Sharing &amp; Transition Circle</strong><em>La Huerta shala</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">16:00</div><div class="sdj-event"><strong>Singing &amp; Cacao Ceremony</strong><em>Gina &amp; Rosa · Canto Intuitivo · La Huerta shala</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Dinner</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Campfire</strong></div></div>
-    </div>
-  </div>
-
-  <!-- TUESDAY -->
-  <div class="sdj-col">
-    <div class="sdj-card">
-      <div class="sdj-date">April 21</div>
-      <div class="sdj-dayname">Tuesday</div>
-      <div class="sdj-meta-row">
-        <div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Flow → Staccato → Chaos</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Earth</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">The Wild Woman · Wolf Woman · Jaguar Woman</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Chakra</span><span class="sdj-meta-val chakra">Muladhara</span></div>
-      </div>
-      <div class="sdj-theme">Preparation for day 3 — grounding, cleansing, purifying. Practicing conscious awareness. Sharing what we have thus far been experiencing.</div>
-    </div>
-    <div class="sdj-schedule">
-      <div class="sdj-sched-head">Daily Schedule</div>
-      <div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Chanting &amp; Yoga</strong><em>Ali · La Huerta</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Altar Making at Temazcal Site</strong></div></div>
-      <div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>Temazcal</strong><em>Purification, heat &amp; cold · Anaclara</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>River Clay</strong><em>Purification, connecting with the earth · Sasha</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Dinner</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Nidra Yoga</strong><em>Stone house / by the river</em></div></div>
-    </div>
-  </div>
-
-  <!-- WEDNESDAY -->
-  <div class="sdj-col">
-    <div class="sdj-card">
-      <div class="sdj-date">April 22</div>
-      <div class="sdj-dayname">Wednesday</div>
-      <div class="sdj-meta-row">
-        <div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Staccato · Chaos</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Fire</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">Warrior Goddess · Amazon Woman</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Chakra</span><span class="sdj-meta-val chakra">Manipura</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Planet</span><span class="sdj-meta-val planet">Mars</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Goddess</span><span class="sdj-meta-val goddess">Kali</span></div>
-      </div>
-      <div class="sdj-theme">With strength and courage, diving into the ashes — descending into the shadow, surrendering to the emergence of new selves, new stories, transformations.</div>
-    </div>
-    <div class="sdj-schedule">
-      <div class="sdj-sched-head">Daily Schedule</div>
-      <div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga &amp; Meditation</strong><em>Ali · La Huerta</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing &amp; Transition Circle</strong><em>Stone house / by the river</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar Making</strong><em>Gratitude, intention, surrender &amp; receive</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>Theater — Acting the Stories</strong><em>Ana Clara · La Huerta</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">12:00</div><div class="sdj-event"><strong>Lunch</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>Free Time</strong><em>Tacotal Hike · Massage &amp; Treatments</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">15:00</div><div class="sdj-event"><strong>Sharing &amp; Transition Circle</strong><em>La Huerta shala</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">16:00</div><div class="sdj-event"><strong>Dance — Embodying the Warrior</strong><em>Sasha · La Huerta shala</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Dinner</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Hot Tub</strong></div></div>
-    </div>
-  </div>
-
-  <!-- THURSDAY -->
-  <div class="sdj-col">
-    <div class="sdj-card">
-      <div class="sdj-date">April 23</div>
-      <div class="sdj-dayname">Thursday</div>
-      <div class="sdj-meta-row">
-        <div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Lyrical</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Air + Ether</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">Priestess · Lover</span></div>
-      </div>
-      <div class="sdj-theme">Integration: Joy, release, newfound hope. Integrating what emerged — new stories, new knowledge. What has become strong, what has been surrendered, what is feeling accepted.</div>
-    </div>
-    <div class="sdj-schedule">
-      <div class="sdj-sched-head">Daily Schedule</div>
-      <div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga &amp; Meditation</strong><em>Ali · La Huerta</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing &amp; Transition Circle</strong><em>Stone house / by the river</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar Making</strong><em>Gratitude, intention, surrender &amp; receive</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>Facilitating Integration</strong><em>Ali &amp; Sasha · Stone house / by the river</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">12:00</div><div class="sdj-event"><strong>Lunch</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>Group Photo at the River</strong><em>Free time · Nidra Yoga (optional) · Massage &amp; Treatments</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">15:00</div><div class="sdj-event"><strong>Sharing &amp; Transition Circle</strong><em>La Huerta shala</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">16:00</div><div class="sdj-event"><strong>River Closing Ceremony</strong><em>Gina singing · Rosa · Sasha</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Closing Dinner</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Closing Event</strong><em>TBD</em></div></div>
-    </div>
-  </div>
-
-  <!-- FRIDAY -->
-  <div class="sdj-col">
-    <div class="sdj-card">
-      <div class="sdj-date">April 24</div>
-      <div class="sdj-dayname">Friday</div>
-      <div class="sdj-meta-row">
-        <div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Stillness</span></div>
-        <div class="sdj-meta"><span class="sdj-meta-label">Chakra</span><span class="sdj-meta-val chakra">Third Eye &amp; Crown</span></div>
-      </div>
-      <div class="sdj-theme">Reintegration into the real world. Just the morning. What we will be taking back with us. Sisters departure.</div>
-    </div>
-    <div class="sdj-schedule">
-      <div class="sdj-sched-head">Daily Schedule</div>
-      <div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga &amp; Meditation</strong><em>Ali · La Huerta</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong><em>Brad</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing &amp; Transition Circle</strong><em>Stone house / by the river</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar Making</strong><em>Gratitude, intention, surrender &amp; receive</em></div></div>
-      <div class="sdj-block"><div class="sdj-time">12–14</div><div class="sdj-event"><strong>Sisters Depart</strong></div></div>
-    </div>
-  </div>
-
+<!-- SUNDAY -->
+<div class="sdj-col">
+<div class="sdj-card">
+<div class="sdj-date">April 19</div>
+<div class="sdj-dayname">Sunday</div>
+<div class="sdj-theme"><strong>Sisters arrive, settle in.</strong></div>
 </div>
-
+<div class="sdj-schedule">
+<div class="sdj-sched-head">Daily Schedule</div>
+<div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Checkin</strong><em>Intros · Learn about and explore the retreat land - Machu Campo &amp; La Huerta</em></div></div><div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Ecstatic Dance and Dinner</strong><em>Location: ESM · TBD</em></div></div></div>
+</div>
+<!-- MONDAY -->
+<div class="sdj-col">
+<div class="sdj-card">
+<div class="sdj-date">April 20</div>
+<div class="sdj-dayname">Monday</div>
+<div class="sdj-meta-row"><div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Flow</span></div><div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Water+Earth</span></div><div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">Inner mother</span></div></div>
+<div class="sdj-theme"><strong>Turn Inward</strong><p>Wash away our worries and stories, rest, feel safe. Be here, be present, intentional and slow.</p></div>
+</div>
+<div class="sdj-schedule">
+<div class="sdj-sched-head">Daily Schedule</div>
+<div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga and Meditation - Ali</strong><em>Location: La Huerta</em></div></div><div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong><em>Introduction to Machu Campo</em></div></div><div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing, transition circle</strong><em>Location: stone house/by the river</em></div></div><div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar-making, gratitude, intention, asking to surrender and receive</strong></div></div><div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>River Ceremony - recognizing and honoring the river spirit and flow - Rosa</strong><em>Location: The River</em></div></div><div class="sdj-block"><div class="sdj-time">12:00</div><div class="sdj-event"><strong>Lunch</strong></div></div><div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>Free time</strong><em>Nidra Yoga - Ali (if she is available) · One-on-one healing sessions by appointment</em></div></div><div class="sdj-block"><div class="sdj-time">15:00</div><div class="sdj-event"><strong>Sharing, transition circle</strong><em>Location: La Huerta shala</em></div></div><div class="sdj-block"><div class="sdj-time">16:00</div><div class="sdj-event"><strong>Gina &amp; Rosa Singing,</strong><em>Gina: Canto Intuitivo w/Cacao · Cermonial Circle · Location: La Huerta shala</em></div></div><div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Dinner</strong></div></div><div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Campfire</strong></div></div></div>
+</div>
+<!-- TUESDAY -->
+<div class="sdj-col">
+<div class="sdj-card">
+<div class="sdj-date">April 21</div>
+<div class="sdj-dayname">Tuesday</div>
+<div class="sdj-meta-row"><div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Flow, picking up some Staccato, even Chaos, with the drumming</span></div><div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Earth</span></div><div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">The Wild Woman, the Embodied, the Wolf Woman, the Jaguar Woman</span></div></div>
+<div class="sdj-theme"><strong>Ground and Purify</strong><p>Put our hands in the earth. Cleanse.</p></div>
+</div>
+<div class="sdj-schedule">
+<div class="sdj-sched-head">Daily Schedule</div>
+<div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Chanting &amp; Yoga- Ali</strong><em>Location: La Huerta</em></div></div><div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong></div></div><div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Altar-making</strong><em>Location: Temazcal site</em></div></div><div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>Temazcal - purification, heat and cold - Anaclara</strong><em>Location: Temazcal site</em></div></div><div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>River Clay after Temazcal - purification connecting with the earth - Sasha, TBC with Ana Clara</strong><em>Location: The River</em></div></div><div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Dinner</strong></div></div><div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Nidra Yoga - Ali</strong><em>Location: stone house/by the river</em></div></div></div>
+</div>
+<!-- WEDNESDAY -->
+<div class="sdj-col">
+<div class="sdj-card">
+<div class="sdj-date">April 22</div>
+<div class="sdj-dayname">Wednesday</div>
+<div class="sdj-meta-row"><div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Staccato, Chaos</span></div><div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Fire</span></div><div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">Warrior Goddess, Amazon Woman</span></div></div>
+<div class="sdj-theme"><strong>Dive Into the Ashes</strong><p>With strength and courage, descend into the shadow, surrender to the emergence of new selves, stories and transformations.</p></div>
+</div>
+<div class="sdj-schedule">
+<div class="sdj-sched-head">Daily Schedule</div>
+<div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga and Meditation - Ali</strong><em>Location: La Huerta</em></div></div><div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong></div></div><div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing, transition circle</strong><em>Location: stone house/by the river</em></div></div><div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar-making, gratitude, intention, asking to surrender and receive</strong></div></div><div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>Theater, acting the stories - Ana Clara</strong><em>Location: La Huerta shala?</em></div></div><div class="sdj-block"><div class="sdj-time">12:00</div><div class="sdj-event"><strong>Lunch</strong></div></div><div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>Tacotal Hike</strong><em>Free time · Nidra Yoga - Ali (if she is available) · One-on-one healing sessions by appointment</em></div></div><div class="sdj-block"><div class="sdj-time">15:00</div><div class="sdj-event"><strong>Sharing, transition circle</strong><em>Location: La Huerta shala</em></div></div><div class="sdj-block"><div class="sdj-time">16:00</div><div class="sdj-event"><strong>Dance embodying the warrior and the emergant - Sasha</strong><em>Location: La Huerta shala</em></div></div><div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Dinner</strong></div></div><div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Hot Tub</strong></div></div></div>
+</div>
+<!-- THURSDAY -->
+<div class="sdj-col">
+<div class="sdj-card">
+<div class="sdj-date">April 23</div>
+<div class="sdj-dayname">Thursday</div>
+<div class="sdj-meta-row"><div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Lyrical</span></div><div class="sdj-meta"><span class="sdj-meta-label">Element</span><span class="sdj-meta-val element">Air+Ether</span></div><div class="sdj-meta"><span class="sdj-meta-label">Archetype</span><span class="sdj-meta-val archetype">Priestess, Lover</span></div></div>
+<div class="sdj-theme"><strong>Integrate</strong><p>Observe and share what has emerged. What has been discovered. What has become strong.  What has become weak. What is being surrendered, what is being embraced.</p></div>
+</div>
+<div class="sdj-schedule">
+<div class="sdj-sched-head">Daily Schedule</div>
+<div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga and Meditation - Ali</strong><em>Location: La Huerta</em></div></div><div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong></div></div><div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing, transition circle</strong><em>Location: stone house/by the river</em></div></div><div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar-making, gratitude, intention, asking to surrender and receive</strong></div></div><div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>Facilitating the integration - Sasha and Ali</strong><em>Location: stone house/by the river</em></div></div><div class="sdj-block"><div class="sdj-time">12:00</div><div class="sdj-event"><strong>Lunch</strong></div></div><div class="sdj-block"><div class="sdj-time">13:00</div><div class="sdj-event"><strong>Group picture at the river</strong><em>Free time · Nidra Yoga - Ali (if she is available) · One-on-one healing sessions by appointment</em></div></div><div class="sdj-block"><div class="sdj-time">15:00</div><div class="sdj-event"><strong>Sharing, transition circle</strong><em>Location: La Huerta shala</em></div></div><div class="sdj-block"><div class="sdj-time">16:00</div><div class="sdj-event"><strong>River - Closing ceremony</strong><em>Gina singing circle · Rosa talking about the Protectresses of Machuca · Sasha formal closing</em></div></div><div class="sdj-block"><div class="sdj-time">17:30</div><div class="sdj-event"><strong>Closing Dinner</strong></div></div><div class="sdj-block"><div class="sdj-time">18:30</div><div class="sdj-event"><strong>Closing event - TBD</strong></div></div></div>
+</div>
+<!-- FRIDAY -->
+<div class="sdj-col">
+<div class="sdj-card">
+<div class="sdj-date">April 24</div>
+<div class="sdj-dayname">Friday</div>
+<div class="sdj-meta-row"><div class="sdj-meta"><span class="sdj-meta-label">Rhythm</span><span class="sdj-meta-val rhythm">Stillness</span></div></div>
+<div class="sdj-theme"><strong>Carry it Home</strong><p>Sisters departure</p></div>
+</div>
+<div class="sdj-schedule">
+<div class="sdj-sched-head">Daily Schedule</div>
+<div class="sdj-block"><div class="sdj-time">6:00</div><div class="sdj-event"><strong>Slow Yoga and Meditation - Ali</strong><em>Location: La Huerta</em></div></div><div class="sdj-block"><div class="sdj-time">7:30</div><div class="sdj-event"><strong>Breakfast</strong></div></div><div class="sdj-block"><div class="sdj-time">8:30</div><div class="sdj-event"><strong>Sharing, transition circle</strong><em>Location: stone house/by the river</em></div></div><div class="sdj-block"><div class="sdj-time">9:30</div><div class="sdj-event"><strong>Altar-making, gratitude, intention, asking to surrender and receive</strong></div></div><div class="sdj-block"><div class="sdj-time">10:00</div><div class="sdj-event"><strong>Women leave around 12-2pm.</strong></div></div></div>
+</div>
+</div>
 <div class="sdj-footer">Sisters Daily Journey · Machu Campo · April 2026</div>
-
 </div>
