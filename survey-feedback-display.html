@@ -117,22 +117,61 @@
             border-color: #B86A3C;
         }
 
+        .response-card.collapsed {
+            cursor: pointer;
+        }
+
+        .response-card.collapsed:hover .response-header h3::after {
+            color: #EDD286;
+        }
+
         .response-header {
             border-bottom: 3px solid #B86A3C;
             padding-bottom: 15px;
             margin-bottom: 25px;
         }
 
+        .response-card.collapsed .response-header {
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
         .response-header h3 {
             color: #B86A3C;
             font-size: 1.5em;
             margin-bottom: 5px;
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .response-header h3::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            transition: transform 0.3s ease;
+            color: #B86A3C;
+        }
+
+        .response-card.collapsed .response-header h3::after {
+            transform: rotate(-90deg);
         }
 
         .response-meta {
             color: #EDD286;
             font-size: 0.9em;
             opacity: 0.8;
+        }
+
+        .response-content {
+            max-height: 5000px;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .response-card.collapsed .response-content {
+            max-height: 0;
+            opacity: 0;
         }
 
         .question-group {
@@ -227,6 +266,23 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all response cards
+            const responseCards = document.querySelectorAll('.response-card');
+            
+            responseCards.forEach(card => {
+                // Set initial collapsed state
+                card.classList.add('collapsed');
+                
+                // Add click handler to the header
+                const header = card.querySelector('.response-header');
+                header.addEventListener('click', function(e) {
+                    card.classList.toggle('collapsed');
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -266,6 +322,7 @@
                     <div class="response-meta">Submitted: May 11, 2026</div>
                 </div>
 
+                <div class="response-content">
                 <div class="question-group">
                     <h4>How they heard about the retreat:</h4>
                     <div class="tags">
@@ -399,6 +456,7 @@
                         <div class="answer-text"><span class="rating">10/10</span> - "I am grateful that I was able to do it for less since I wouldn't have done it otherwise at this time. Happy to help set up"</div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Response 2 -->
@@ -408,6 +466,7 @@
                     <div class="response-meta">Submitted: May 9, 2026</div>
                 </div>
 
+                <div class="response-content">
                 <div class="question-group">
                     <h4>How they heard about the retreat:</h4>
                     <div class="tags">
@@ -533,6 +592,7 @@
                         <div class="answer-text">"Thank you for supporting me during one of the most meaningful years of my life. I just turned 40, and I feel deeply determined to walk my own path beyond any social or cultural system. This space gave me the opportunity to heal with my sisters, with the river, and with the earth. I highly recommend this experience to every woman who is ready to step out of her mind and enter the sacred flow of life. With love, Mimi"</div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Response 3 -->
@@ -542,6 +602,7 @@
                     <div class="response-meta">Submitted: May 8, 2026</div>
                 </div>
 
+                <div class="response-content">
                 <div class="question-group">
                     <h4>How they heard about the retreat:</h4>
                     <div class="tags">
@@ -681,6 +742,7 @@
                         <div class="answer-text">"Nicely Done, let's do it again"</div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Response 4 -->
@@ -690,6 +752,7 @@
                     <div class="response-meta">Submitted: May 5, 2026</div>
                 </div>
 
+                <div class="response-content">
                 <div class="question-group">
                     <h4>How they heard about the retreat:</h4>
                     <div class="tags">
@@ -832,6 +895,7 @@
                         <div class="answer-text">"Thank you for creating such an incredible experience!"</div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Response 5 -->
@@ -841,6 +905,7 @@
                     <div class="response-meta">Submitted: May 5, 2026</div>
                 </div>
 
+                <div class="response-content">
                 <div class="question-group">
                     <h4>How they heard about the retreat:</h4>
                     <div class="tags">
@@ -949,6 +1014,7 @@
                         <div class="answer-text"><span class="rating">10/10</span></div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Response 6 -->
@@ -958,6 +1024,7 @@
                     <div class="response-meta">Submitted: May 4, 2026</div>
                 </div>
 
+                <div class="response-content">
                 <div class="question-group">
                     <h4>How they heard about the retreat:</h4>
                     <div class="tags">
@@ -1094,6 +1161,7 @@
                         <div class="answer-text">"It was absolute perfection for me and I'm so thankful. Thank you for bringing me in so fully, helping me get there in so many ways. I'll treasure these memories forever"</div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Response 7 -->
@@ -1103,6 +1171,7 @@
                     <div class="response-meta">Submitted: May 3, 2026</div>
                 </div>
 
+                <div class="response-content">
                 <div class="question-group">
                     <h4>What Drew Them:</h4>
                     <div class="tags">
@@ -1230,6 +1299,7 @@
                     <div class="answer">
                         <div class="answer-text">"Thank you so much it was such a beautiful experience"</div>
                     </div>
+                </div>
                 </div>
             </div>
 
