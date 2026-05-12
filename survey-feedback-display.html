@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow of a River Retreat - Feedback Survey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #EDD286;
+            background: #2A3712;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #181200;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        header {
+            background: #181200;
+            color: #B86A3C;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 2px solid #B86A3C;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        header img {
+          width: 100px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            color: #EDD286;
+            font-style: italic;
+        }
+
+        .summary {
+            background: #181200;
+            padding: 30px;
+            border-bottom: 3px solid #B86A3C;
+        }
+
+        .summary h2 {
+            color: #B86A3C;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: rgba(24, 18, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border: 1px solid rgba(237, 210, 134, 0.2);
+        }
+
+        .stat-box .number {
+            font-size: 2.5em;
+            color: #B86A3C;
+            font-weight: bold;
+        }
+
+        .stat-box .label {
+            color: #EDD286;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .responses {
+            padding: 30px;
+            background: #181200;
+        }
+
+        .response-card {
+            background: rgba(24, 18, 0, 0.2);
+            border: 2px solid rgba(184, 106, 60, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .response-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(184, 106, 60, 0.4);
+            border-color: #B86A3C;
+        }
+
+        .response-header {
+            border-bottom: 3px solid #B86A3C;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .response-header h3 {
+            color: #B86A3C;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .response-meta {
+            color: #EDD286;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .question-group {
+            margin-bottom: 25px;
+        }
+
+        .question-group h4 {
+            color: #B86A3C;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .answer {
+            background: rgba(24, 18, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #B86A3C;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            color: #EDD286;
+            line-height: 1.8;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: rgba(184, 106, 60, 0.8);
+            color: #EDD286;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            border: 1px solid rgba(237, 210, 134, 0.3);
+        }
+
+        .rating {
+            display: inline-block;
+            background: #B86A3C;
+            color: #EDD286;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: 2px solid #EDD286;
+        }
+
+        .highlight {
+            background: rgba(184, 106, 60, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #B86A3C;
+            border: 1px solid rgba(184, 106, 60, 0.3);
+        }
+
+        .quote {
+            font-style: italic;
+            color: #EDD286;
+            padding: 15px;
+            border-left: 4px solid #B86A3C;
+            background: rgba(24, 18, 0, 0.3);
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            color: #B86A3C;
+            font-size: 1.3em;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(184, 106, 60, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .response-card {
+                padding: 20px;
+            }
+
+            .summary-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+          <img src="../abstract phoenix.svg"/>
+          <h1>Flow of a River Retreat</h1>
+          <p>Participant Feedback Survey Results</p>
+        </header>
+
+        <div class="summary">
+            <h2>Summary Overview</h2>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div class="number">7</div>
+                    <div class="label">Total Responses</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">100%</div>
+                    <div class="label">Would Return</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">9.4</div>
+                    <div class="label">Avg. Overall Rating</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">May 2026</div>
+                    <div class="label">Survey Period</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="responses">
+            <!-- Response 1 -->
+            <div class="response-card">
+                <div class="response-header">
+                    <h3>Response #1</h3>
+                    <div class="response-meta">Submitted: May 11, 2026</div>
+                </div>
+
+                <div class="question-group">
+                    <h4>How they heard about the retreat:</h4>
+                    <div class="tags">
+                        <span class="tag">The phoenix</span>
+                        <span class="tag">Whatsapp posts from Sasha</span>
+                        <span class="tag">Community</span>
+                        <span class="tag">Dance</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Marketing Materials:</h4>
+                    <div class="tags">
+                        <span class="tag">The photos</span>
+                        <span class="tag">The graphics</span>
+                        <span class="tag">The text/words</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Natural Setting Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very enjoyable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Physical Layout:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Mostly comfortable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Food Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Delicious, loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Favorite Pillars (Ranked):</h4>
+                    <div class="answer">
+                        <div class="answer-text">Community, Nature (particularly), Yoga and Meditation, Ceremony, Dance, Theater, Singing</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Archetypes Connected With:</h4>
+                    <div class="tags">
+                        <span class="tag">Wild Woman</span>
+                        <span class="tag">Priestess/Lover</span>
+                        <span class="tag">Warrior Goddess/Amazon Woman</span>
+                        <span class="tag">Inner Mother</span>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Impact of Most Meaningful Archetype:</h4>
+                    <div class="quote">
+                        "Wild woman impacted me by becoming more comfortable with the elements of the river, the discomfort of the heat, embracing it rather than getting through it. Embracing the fish nibbling on me rather than running away. Embracing nature in all its forms from bugs to rain. Embracing my wild woman and sharing with the community without shame."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Rewilding Senses:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Nicely</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Creative Fire Awakening:</h4>
+                    <div class="answer">
+                        <div class="answer-text">My creative fire was in the process of awakening and the retreat helped move that forward but I'm still on the path</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Claimed Primal Power:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">7/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Experience Details:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">9/10</span> - "I loved the energy you brought Sasha and really enjoyed it. I love to dance"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Felt Safe & Supported:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes, I feel supported and it felt like a collaboration which I loved. I felt like we moved with the flow together</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Meaningful Takeaway:</h4>
+                    <div class="quote">
+                        "Enjoyed the difficult conversations about peace and about acceptance of differences. I felt that when community is created we can hold difficult conversations and respect each other. Also, it was very impactful to reconnect even deeper with Gaia and to feel my inner priestess move from being only in the womb unless called on to embodying my whole self."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>What They'd Tell a Friend:</h4>
+                    <div class="quote">
+                        "That it is an amazing opportunity to connect with wonderful women, in a wonderful natural setting and experience connection to community, nature and our inner power."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Would Join Another Retreat:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Improvements Suggested:</h4>
+                    <div class="answer">
+                        <div class="answer-text">I would determine best flow of timing ahead of time maybe. Starting yoga later and meal later seemed to have been a daily flow but I was also fine with going with the flow.</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Value for Price:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span> - "I am grateful that I was able to do it for less since I wouldn't have done it otherwise at this time. Happy to help set up"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response 2 -->
+            <div class="response-card">
+                <div class="response-header">
+                    <h3>Response #2 - Mimi</h3>
+                    <div class="response-meta">Submitted: May 9, 2026</div>
+                </div>
+
+                <div class="question-group">
+                    <h4>How they heard about the retreat:</h4>
+                    <div class="tags">
+                        <span class="tag">The name "Flow of a River"</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Marketing Materials:</h4>
+                    <div class="tags">
+                        <span class="tag">Everything</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Natural Setting Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Absolutely loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Physical Layout:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Manageable, with some effort</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Food Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Delicious, loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Favorite Pillars (Ranked):</h4>
+                    <div class="answer">
+                        <div class="answer-text">Ceremony, Dance, Singing, Theater, Nature (particularly), Yoga and Meditation, Community</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Impact of Most Meaningful Archetype:</h4>
+                    <div class="quote">
+                        "This retreat was deeply special for me because it gave me the opportunity to leave my mind behind and truly enter my heart. It was nothing like other workshops full of information and knowledge. Instead, it was an invitation to experience the sacredness of life. The wild woman was the most relevant archetype for me. It was one of the wildest, most beautiful experiences I have ever lived, sharing in community with all my sisters and the river beside us."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Rewilding Senses:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very Much</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Creative Fire Awakening:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Claimed Primal Power:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">8/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Experience Details:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">10/10</span> - "It was a very beautiful experience to integrate everything we lived and experienced throughout the week."</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Felt Safe & Supported:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Meaningful Takeaway:</h4>
+                    <div class="quote">
+                        "The awakening of the wild woman within me made me realize that I have full ownership of my life and that I can deeply explore my being through my own senses and intuition. The most meaningful part of this experience—and what I continue to carry with me—is the awakening of my intuition. Now, it is my inner compass."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>What They'd Tell a Friend:</h4>
+                    <div class="quote">
+                        "Just fucking go! It will be your wildest adventure."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Would Join Another Retreat:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Improvements Suggested:</h4>
+                    <div class="answer">
+                        <div class="answer-text">I'm sooo sorry. I have no comments. I honestly think it was amazingly wild.</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Value for Price:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">5/10</span> - "In my case, I was able to attend because of the agreement and exchange I had arranged beforehand. I do feel that the price was quite high for local Costa Rican women."</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Additional Comments:</h4>
+                    <div class="answer">
+                        <div class="answer-text">"Thank you for supporting me during one of the most meaningful years of my life. I just turned 40, and I feel deeply determined to walk my own path beyond any social or cultural system. This space gave me the opportunity to heal with my sisters, with the river, and with the earth. I highly recommend this experience to every woman who is ready to step out of her mind and enter the sacred flow of life. With love, Mimi"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response 3 -->
+            <div class="response-card">
+                <div class="response-header">
+                    <h3>Response #3</h3>
+                    <div class="response-meta">Submitted: May 8, 2026</div>
+                </div>
+
+                <div class="question-group">
+                    <h4>How they heard about the retreat:</h4>
+                    <div class="tags">
+                        <span class="tag">Whatsapp posts from Sasha</span>
+                        <span class="tag">Community</span>
+                        <span class="tag">Song</span>
+                        <span class="tag">Machu Campo</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Marketing Materials:</h4>
+                    <div class="tags">
+                        <span class="tag">The photos</span>
+                        <span class="tag">The text/words</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Natural Setting Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Absolutely loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Physical Layout:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Mostly comfortable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Food Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Felt healthy</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Favorite Pillars (Ranked):</h4>
+                    <div class="answer">
+                        <div class="answer-text">Nature (particularly), Singing, Dance, Community, Theater, Yoga and Meditation, Ceremony</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Archetypes Connected With:</h4>
+                    <div class="tags">
+                        <span class="tag">Wild Woman</span>
+                        <span class="tag">Warrior Goddess/Amazon Woman</span>
+                        <span class="tag">Inner Mother</span>
+                        <span class="tag">Priestess/Lover</span>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Impact of Most Meaningful Archetype:</h4>
+                    <div class="quote">
+                        "Being in nature with feminine company made it possible on a deeper level."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Rewilding Senses:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very Much</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Creative Fire Awakening:</h4>
+                    <div class="answer">
+                        <div class="answer-text">"Very inspiring to create more gatherings like this"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Claimed Primal Power:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">8/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Experience Details:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">8/10</span> - "Guided Dance allows us to explore deeper & learn more about ourselves & others"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Felt Safe & Supported:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Meaningful Takeaway:</h4>
+                    <div class="quote">
+                        "The feeling of Unity and Vulnerability within a small group of women seems like something that the world could benefit from having a lot more of, a lot more often."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>What They'd Tell a Friend:</h4>
+                    <div class="quote">
+                        "Get ready to show up and flow with the unexpected timing of nature, to exercise your open mind and open heart in an unpredictable setting, dive deep into your own awareness while connecting and supporting other brave & vulnerable women - sharing art, movement, meals, ceremony, spiritual & social explorations while being held by the jungle & the soundscape of the river."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Would Join Another Retreat:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Improvements Suggested:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yoga starting a bit later so the day can begin slowly and alone in nature (with a warm beverage) before needing to speak or be led</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Value for Price:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">6/10</span> - "I think $350 a day is what is needed to cover the costs and allow the hosts to make a small profit so it seemed pretty right on"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Additional Comments:</h4>
+                    <div class="answer">
+                        <div class="answer-text">"Nicely Done, let's do it again"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response 4 -->
+            <div class="response-card">
+                <div class="response-header">
+                    <h3>Response #4 - Roberta Blahut</h3>
+                    <div class="response-meta">Submitted: May 5, 2026</div>
+                </div>
+
+                <div class="question-group">
+                    <h4>How they heard about the retreat:</h4>
+                    <div class="tags">
+                        <span class="tag">The Flow of a River Website</span>
+                        <span class="tag">Flow of a River posts on Instagram</span>
+                        <span class="tag">The archetypes</span>
+                        <span class="tag">Community</span>
+                        <span class="tag">Song</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Marketing Materials:</h4>
+                    <div class="tags">
+                        <span class="tag">The photos</span>
+                        <span class="tag">The graphics</span>
+                        <span class="tag">The text/words</span>
+                        <span class="tag">The colors</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Natural Setting Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very enjoyable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Physical Layout:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Mostly comfortable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Food Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Was generally good for me</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Favorite Pillars (Ranked):</h4>
+                    <div class="answer">
+                        <div class="answer-text">Singing, Nature (particularly), Community, Theater, Yoga and Meditation, Ceremony, Dance</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Archetypes Connected With:</h4>
+                    <div class="tags">
+                        <span class="tag">Wild Woman</span>
+                        <span class="tag">Priestess/Lover</span>
+                        <span class="tag">Warrior Goddess/Amazon Woman</span>
+                        <span class="tag">Inner Mother</span>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Impact of Most Meaningful Archetype:</h4>
+                    <div class="quote">
+                        "I felt I was coming back to myself after a long time."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Rewilding Senses:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very Much</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Creative Fire Awakening:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Claimed Primal Power:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Experience Details:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">5/10</span> - "I loved it and it opened up spaces inside of me that were forgotten. I wish it happened the second day, I was very tired when we did it and I felt not enough physical energy to keep it up 😉"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Felt Safe & Supported:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes very much</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Meaningful Takeaway:</h4>
+                    <div class="quote">
+                        "This retreat helped me to 'remember' and to reconnect with parts of me that I have been neglecting. I feel free again and creative. On a daily basis I reconnect with these feelings I felt at the retreat and I can easily drop into a very joyful state."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>What They'd Tell a Friend:</h4>
+                    <div class="quote">
+                        "Don't miss it! You will come back renewed and uplifted."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Would Join Another Retreat:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Improvements Suggested:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes, too short!</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Value for Price:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Additional Comments:</h4>
+                    <div class="answer">
+                        <div class="answer-text">"Thank you for creating such an incredible experience!"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response 5 -->
+            <div class="response-card">
+                <div class="response-header">
+                    <h3>Response #5 - Naida Volkov</h3>
+                    <div class="response-meta">Submitted: May 5, 2026</div>
+                </div>
+
+                <div class="question-group">
+                    <h4>How they heard about the retreat:</h4>
+                    <div class="tags">
+                        <span class="tag">Conversations with friends</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Marketing Materials:</h4>
+                    <div class="tags">
+                        <span class="tag">The photos</span>
+                        <span class="tag">The colors</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Natural Setting Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very enjoyable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Physical Layout:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Mostly comfortable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Food Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Delicious, loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Favorite Pillars (Ranked):</h4>
+                    <div class="answer">
+                        <div class="answer-text">Dance, Singing, Nature (particularly), Yoga and Meditation, Community, Ceremony, Theater</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Archetypes Connected With:</h4>
+                    <div class="tags">
+                        <span class="tag">Inner Mother</span>
+                        <span class="tag">Wild Woman</span>
+                        <span class="tag">Warrior Goddess/Amazon Woman</span>
+                        <span class="tag">Priestess/Lover</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Rewilding Senses:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Nicely</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Claimed Primal Power:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Felt Safe & Supported:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Meaningful Takeaway:</h4>
+                    <div class="quote">
+                        "I loved the sense of community, being in the nature, for the first time I was able to dive into meditation without thoughts and an urge to distract myself."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>What They'd Tell a Friend:</h4>
+                    <div class="quote">
+                        "Very good place to be yourself."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Would Join Another Retreat:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">8/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Improvements Suggested:</h4>
+                    <div class="answer">
+                        <div class="answer-text">More choice of food - a little more protein. A little earlier email with details of the retreat</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Value for Price:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response 6 -->
+            <div class="response-card">
+                <div class="response-header">
+                    <h3>Response #6 - Stephanie Ciancio</h3>
+                    <div class="response-meta">Submitted: May 4, 2026</div>
+                </div>
+
+                <div class="question-group">
+                    <h4>How they heard about the retreat:</h4>
+                    <div class="tags">
+                        <span class="tag">The name "Flow of a River"</span>
+                        <span class="tag">The river</span>
+                        <span class="tag">Conversations with friends</span>
+                        <span class="tag">Community</span>
+                        <span class="tag">Yoga</span>
+                        <span class="tag">Song</span>
+                        <span class="tag">Temazcal</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Marketing Materials:</h4>
+                    <div class="tags">
+                        <span class="tag">Everything</span>
+                        <span class="tag">The photos</span>
+                        <span class="tag">The text/words</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Natural Setting Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Absolutely loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Physical Layout:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Mostly comfortable</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Food Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Delicious, loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Favorite Pillars (Ranked):</h4>
+                    <div class="answer">
+                        <div class="answer-text">Nature (particularly), Community, Ceremony, Singing, Yoga and Meditation, Theater, Dance</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Archetypes Connected With:</h4>
+                    <div class="tags">
+                        <span class="tag">Warrior Goddess/Amazon Woman</span>
+                        <span class="tag">Inner Mother</span>
+                        <span class="tag">Priestess/Lover</span>
+                        <span class="tag">Wild Woman</span>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Impact of Most Meaningful Archetype:</h4>
+                    <div class="quote">
+                        "After the drama workshop, Jasmine told me that I have a lot of strength. I've been thinking of that, drawing on that. Giving myself some credit for the transformation of temazcal. The inner mother archetype is elusive for me but I want to cultivate her with singing the songs."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Rewilding Senses:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very Much</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Creative Fire Awakening:</h4>
+                    <div class="answer">
+                        <div class="answer-text">"Putting my movement teaching out there - yes. Cooking again, too"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Claimed Primal Power:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">5/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Experience Details:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">5/10</span> - "My favorite was admiring others. It's hard for me to drop into dance. Being with good friends feeling comfortable interacting made it uniquely fun for me"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Felt Safe & Supported:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Remarkably so</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Meaningful Takeaway:</h4>
+                    <div class="quote">
+                        "It was a restorative experience, coming back to mother earth, celebrating the sacred, sharing beautiful experiences with friends. Exchanging self consciousness for consciousness. Being so cared for, I accessed rest and connection. The river lulled me to bed early and lured me out early each morning. I am making a pact to spend more time at the river and keep the friendships kindled."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>What They'd Tell a Friend:</h4>
+                    <div class="quote">
+                        "The retreat was the most delicious version of what I love most about living in Costa Rica - nature, community, amazing local food, shared meals, play, gratitude, being graced by guidance from incredible women in sacred experiences. The way all of this was woven together for us was an unforgettable gift."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Would Join Another Retreat:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Value for Price:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span> - "To hear about a retreat and see the standard pricing, I didn't think that I would join as I'm working toward earning more but not there yet. The local rate felt very generous and accessible. I was a little worried about it working on your end. I was eager to tip the Machu Campo Staff and skipped the ticketed dance to allot funds there."</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Additional Comments:</h4>
+                    <div class="answer">
+                        <div class="answer-text">"It was absolute perfection for me and I'm so thankful. Thank you for bringing me in so fully, helping me get there in so many ways. I'll treasure these memories forever"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response 7 -->
+            <div class="response-card">
+                <div class="response-header">
+                    <h3>Response #7 - Kristen</h3>
+                    <div class="response-meta">Submitted: May 3, 2026</div>
+                </div>
+
+                <div class="question-group">
+                    <h4>What Drew Them:</h4>
+                    <div class="tags">
+                        <span class="tag">Sasha! And all of the other things were a bonus</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Marketing Materials:</h4>
+                    <div class="tags">
+                        <span class="tag">Everything</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Natural Setting Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Absolutely loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Physical Layout:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very comfortable and easy</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Food Experience:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Delicious, loved it</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Favorite Pillars (Ranked):</h4>
+                    <div class="answer">
+                        <div class="answer-text">Dance, Nature (particularly), Community, Singing, Ceremony, Yoga and Meditation, Theater</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Archetypes Connected With:</h4>
+                    <div class="tags">
+                        <span class="tag">Wild Woman</span>
+                        <span class="tag">Inner Mother</span>
+                        <span class="tag">Warrior Goddess/Amazon Woman</span>
+                        <span class="tag">Priestess/Lover</span>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Impact of Most Meaningful Archetype:</h4>
+                    <div class="quote">
+                        "I felt so free and empowered."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Rewilding Senses:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Very Much</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Creative Fire Awakening:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Claimed Primal Power:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Experience Details:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Rating: <span class="rating">10/10</span> - "You inspired me so much"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Felt Safe & Supported:</h4>
+                    <div class="answer">
+                        <div class="answer-text">Yes</div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>Meaningful Takeaway:</h4>
+                    <div class="quote">
+                        "Feeling empowered and connection amongst sisters."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h4>What They'd Tell a Friend:</h4>
+                    <div class="quote">
+                        "It was safe space to rewild and be supported by other women to be fully empowered and there was so much laughter and joy. It was such a gift."
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Would Join Another Retreat:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span></div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Value for Price:</h4>
+                    <div class="answer">
+                        <div class="answer-text"><span class="rating">10/10</span> - "I was so grateful to support and share Acu as an exchange. I'd be happy to do more group classes for people with energywork, tuning forks, meditation, qi gong next time"</div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <h4>Additional Comments:</h4>
+                    <div class="answer">
+                        <div class="answer-text">"Thank you so much it was such a beautiful experience"</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
